@@ -1,0 +1,73 @@
+
+  
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15%;
+    background: -webkit-linear-gradient(left, rgba(0, 168, 255, 0.5), rgba(208, 250, 248, 0.84));
+    background: -o-linear-gradient(left, rgba(0, 168, 255, 0.5), rgba(204, 255, 252, 0.84));
+    background: -moz-linear-gradient(left, rgba(0, 168, 255, 0.5),  rgba(201, 254, 251, 0.84));
+    background: linear-gradient(left, rgba(0, 168, 255, 0.5),  rgba(183, 247, 243, 0.84));
+    flex-wrap: wrap;
+  }
+  
+  .banner-texto {
+    flex: 1 1 400px;
+    max-width: 600px;
+  }
+  
+  .banner-texto h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #000;
+    margin: 0 0 20px;
+    line-height: 1.2;
+  }
+  
+  .banner-texto h1 span {
+    color: #000;
+  }
+  
+  .banner-texto p {
+    font-size: 1em;
+    color: #444;
+    margin-bottom: 30px;
+  }
+  
+  .botones {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .btn {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #ccc;
+  }
+  
+  .btn.comprar:hover {
+    background-color: #eee;
+  }
+    
+  .banner-imagen {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .banner-imagen img {
+    max-width: 100%;
+    height: auto;
+  }
+  

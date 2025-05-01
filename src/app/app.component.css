@@ -1,0 +1,8 @@
+body{
+    background: rgba(93, 84, 240, 0.5);
+    background: -webkit-linear-gradient(left, rgba(0, 168, 255, 0.5), rgba(208, 250, 248, 0.84));
+    background: -o-linear-gradient(left, rgba(0, 168, 255, 0.5), rgba(204, 255, 252, 0.84));
+    background: -moz-linear-gradient(left, rgba(0, 168, 255, 0.5),  rgba(201, 254, 251, 0.84));
+    background: linear-gradient(left, rgba(0, 168, 255, 0.5),  rgba(183, 247, 243, 0.84));
+}
+/* no se aplica */
