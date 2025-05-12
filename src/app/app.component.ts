@@ -12,9 +12,6 @@ import { DonacionComponent } from "./pages/donacion/donacion.component";
     RouterOutlet,
     NavbarComponent,
     FooterComponent,
-    TechforallComponent,
-    CatalogoComponent,
-    DonacionComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
