@@ -6,3 +6,7 @@
 .navbar-light .navbar-nav .nav-link {
   color: #000;
 }
+
+.nav-item, .navbar-brand, .btn {
+  cursor: pointer;/* Add a pointer cursor to nav items */
+}
