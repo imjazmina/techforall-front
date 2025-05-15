@@ -1,8 +1,9 @@
 // src/app/services/auth.service.ts
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { Usuario, UsuarioLogin } from '../models/usuario.model';
+import { catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -51,4 +52,14 @@ export class AuthService {
   esAdmin(): boolean {
     return this.getUsuario()?.is_admin ?? false;
   }
+
+  
+  registrarUsuario(data: { email: string; password: string, username:string }) {
+    return this.http.post(`${this.apiUrl}/registro`, data).pipe(
+      catchError((error: HttpErrorResponse) => {
+        return throwError(() => error);
+      })
+    );
+  }
+
 }

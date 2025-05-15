@@ -1,45 +1,44 @@
 <div class="container-contact100">
-    <div class="wrap-contact100">
-        <form class="contact100-form validate-form">
-            <span class="contact100-form-title p-b-43">
-                Registrarse
-            </span>
+  <div class="wrap-contact100">
+    <form class="contact100-form validate-form" [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <span class="contact100-form-title p-b-43">Registrarse</span>
 
-            <div class="wrap-input100 validate-input" data-validate="Please enter email: e@a.x">
-                <input class="input100" type="text" name="email" placeholder="Correo" required>
-                <span class="focus-input100"></span>
-            </div>
+      <div class="wrap-input100" [ngClass]="{'invalid': registroForm.get('email')?.invalid && registroForm.get('email')?.touched}">
+        <input class="input100" type="text" placeholder="Correo" formControlName="email">
+        <span class="focus-input100"></span>
+      </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Please enter your pasword">
-                <input class="input100" type="password" name="email" placeholder="Contrasena" required>
-                <span class="focus-input100"></span>
-            </div>
+      <div class="wrap-input100" [ngClass]="{'invalid': registroForm.get('username')?.invalid && registroForm.get('username')?.touched}">
+        <input class="input100" type="text" placeholder="Username" formControlName="username">
+        <span class="focus-input100"></span>
+      </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Please enter your pasword">
-                <input class="input100" type="password" name="email" placeholder="Repetir contrasena" required>
-                <span class="focus-input100"></span>
-            </div>
+      <div class="wrap-input100" [ngClass]="{'invalid': registroForm.get('password')?.invalid && registroForm.get('password')?.touched}">
+        <input class="input100" type="password" placeholder="Contraseña" formControlName="password">
+        <span class="focus-input100"></span>
+      </div>
 
-            <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
-                    Ingresar
-                </button>
-            </div>
+      <div class="wrap-input100" [ngClass]="{'invalid': registroForm.get('confirmarPassword')?.invalid && registroForm.get('confirmarPassword')?.touched}">
+        <input class="input100" type="password" placeholder="Repetir contraseña" formControlName="confirmarPassword">
+        <span class="focus-input100"></span>
+      </div>
 
-            <div class="contact100-more col-12 mb-3">   
-                <a href="#" class="pwrd-link">
-                Recuperar contrasena
-            </a>
-            </div>
+      <div class="text-danger" *ngIf="registroForm.errors?.['mismatch']">Las contraseñas no coinciden.</div>
+      <div class="text-danger" *ngIf="errorMensaje">{{ errorMensaje }}</div>
 
-            <div class="contact100-more col-12 mb-3">
-                <a href="#" class="register-link">
-                <i class="fa-solid fa-user-plus"></i>
-                <span class="ml-2">No tienes cuenta?</span>
-                Registrarse
-            </a>
-            </div>
-        </form>
-    </div>
+      <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" [disabled]="registroForm.invalid">Registrarse</button>
+      </div>
+
+      <div class="contact100-more col-12 mb-3">
+        <a href="#" class="pwrd-link">Recuperar contraseña</a>
+      </div>
+      <div class="contact100-more col-12 mb-3">
+        <a routerLink="/login" class="register-link">
+          <i class="fa-solid fa-user-plus"></i>
+          <span class="ml-2">¿Ya tienes cuenta?</span> Inicia sesión
+        </a>
+      </div>
+    </form>
+  </div>
 </div>
-
