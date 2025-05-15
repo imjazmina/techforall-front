@@ -32,9 +32,17 @@
         <button class="btn btn-link p-0" aria-label="Abrir carrito" (click)="openModal('carrito')">
           <i class="bi bi-cart fs-4"></i>
         </button>
-        <button class="btn btn-link p-0" aria-label="Abrir perfil" routerLink="/login">
-          <i class="bi bi-person fs-4"></i>
-        </button>
+        <ng-container *ngIf="!authService.estaAutenticado(); else mostrarLogout">
+          <button class="btn btn-link p-0" aria-label="Abrir perfil" routerLink="/login">
+            <i class="bi bi-person fs-4"></i>
+          </button>
+        </ng-container>
+        <!-- Si está autenticado, mostrar logout -->
+        <ng-template #mostrarLogout>
+          <button class="btn btn-link p-0" aria-label="Cerrar sesión" (click)="logout()">
+            <i class="bi bi-box-arrow-right fs-4"></i>
+          </button>
+        </ng-template>
       </div>
     </div>
   </div>
@@ -53,3 +61,4 @@
     <!-- <button type="button" class="btn custom-btn" (click)="validarCupon()">Siguiente</button> -->
   </div>
 </ng-template>
+
